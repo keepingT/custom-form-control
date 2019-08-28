@@ -1,7 +1,16 @@
-<form #form="ngForm">
-  <p>outerCounterValue value: {{outerCounterValue}}</p>
-  <!--[ngModel]="outerCounterValue"为单向绑定，从父组件传递给子组件-->
-  <exe-counter name="counter" [ngModel]="outerCounterValue"></exe-counter>
+<!--模板驱动表单-->
+<!--<form #form="ngForm">-->
+  <!--<p>outerCounterValue value: {{outerCounterValue}}</p>-->
+  <!--&lt;!&ndash;[ngModel]为单向绑定，从父组件传递给子组件&ndash;&gt;-->
+  <!--&lt;!&ndash;<exe-counter name="counter" [ngModel]="outerCounterValue"></exe-counter>&ndash;&gt;-->
+  <!--&lt;!&ndash;[(ngModel)]"为双向绑定，从父组件传递给子组件，子组件变化时也会传给父组件&ndash;&gt;-->
+  <!--<exe-counter name="counter" [(ngModel)]="outerCounterValue"></exe-counter>-->
+<!--</form>-->
+
+<!--响应式表单-->
+<form [formGroup]="form">
+  <exe-counter formControlName="counter"></exe-counter>
 </form>
+<p *ngIf="!form.valid">Counter is invalid!</p>
 <pre>{{ form.value | json }}</pre>
 
