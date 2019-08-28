@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'custom-form-control';
+  outerCounterValue:number = 5;
 }
