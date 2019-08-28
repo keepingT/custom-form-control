@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { validateCounterRange } from './counter/counter.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit{
     this.form = this.fb.group({
       // 设置默认值
       counter: 5
+      //  设置默认值, 添加验证规则
+      //counter: [5, validateCounterRange]
     })
   }
 }

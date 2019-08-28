@@ -9,8 +9,9 @@
 
 <!--响应式表单-->
 <form [formGroup]="form">
-  <exe-counter formControlName="counter"></exe-counter>
+  <exe-counter formControlName="counter" counterRangeMin="2" counterRangeMax="8"></exe-counter>
 </form>
 <p *ngIf="!form.valid">Counter is invalid!</p>
 <pre>{{ form.value | json }}</pre>
+<pre>{{ form.get('counter').errors | json }}</pre>
 
